@@ -24,7 +24,7 @@ class Obstacle(pygame.sprite.Sprite):
 
         self.__frame_index = 0
         self.image = self.__frames[self.__frame_index]
-        self.rect = self.image.get_rect(midbottom=(randint(800, 1100), self.__y_pos))
+        self.rect = self.image.get_rect(midbottom=(randint(800, 1000), self.__y_pos))
 
 
     def animate(self) -> None:
@@ -37,6 +37,6 @@ class Obstacle(pygame.sprite.Sprite):
     # Method override
     def update(self) -> None:
         self.animate()
-        self.rect.x -= 5
+        self.rect.x -= 6
         if self.rect.right < 0:
             self.kill()
